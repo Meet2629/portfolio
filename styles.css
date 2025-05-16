@@ -4,7 +4,386 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  }/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Navigation Bar Styles */
+  .navbar {
+    background-color: var(--accent-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .navbar-brand {
+    font-size: 1.8rem;
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar .nav-links li {
+    list-style: none;
+  }
+  
+  .navbar .nav-links a {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar .nav-links a:hover {
+    background-color: var(--hover-color);
+    border-radius: 5px;
+  }
+  
+  .navbar .theme-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .navbar .theme-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  body {
+    padding-top: 70px; /* Prevent navbar from covering content */
+  }
+  
+  /* Section Styles */
+  section {
+    margin: 50px 0;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+  
+  /* Header Section */
+  /* Header Section */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 40px; /* Space between the image and the text */
+    flex-direction: row-reverse; /* Image on the left, text on the right */
+    padding: 80px 0; /* Adequate padding */
+    background-color: var(--bg-color); /* Ensure background color matches */
+    shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for the section */
+    /* border-radius: 8px; Rounded corners for the header section */
+}
+
+/* Image container for profile image */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 40%; /* Adjust width for the profile image */
+    height: 400px; /* Fix height for a more consistent look */
+    overflow: hidden;
+    shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow around the image */
+    /* border-radius: 50%; Circular container */
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Circular image */
+}
+
+/* Intro Text Section */
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 55%; /* Text section takes up around 55% of the space */
+}
+
+/* Title Styling */
+.title {
+    font-size: 3rem; /* Larger font size for the name */
+    font-weight: 600; /* Medium weight */
+    color: var(--text-color);
+    margin-bottom: 10px; /* Space between title and subtitle */
+    font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+}
+
+/* Subtitle Styling */
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px; /* Space between subtitle and bio */
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif; /* Clean, modern font for the subtitle */
+}
+
+/* Bio Paragraph Styling */
+.bio {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 25px; /* Margin to separate bio from the button */
+    font-family: 'Arial', sans-serif; /* Clean font for the bio */
+    max-width: 500px; /* Make bio text more readable by limiting width */
+}
+
+/* Call to Action Button Styling */
+.cta-btn {
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cta-btn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Responsiveness for Small Screens */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack the image and text vertically on smaller screens */
+        text-align: center;
+    }
+
+    .image-container {
+        width: 60%; /* Image takes more space on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .intro-text {
+        width: 100%; /* Text section takes full width on small screens */
+    }
+
+    .title {
+        font-size: 2.5rem; /* Adjust title size for smaller screens */
+    }
+
+    .subtitle {
+        font-size: 1.3rem; /* Adjust subtitle size */
+    }
+
+    .cta-btn {
+        padding: 10px 20px; /* Adjust button size */
+        width: auto; /* Allow button to resize automatically */
+    }
+}
+
+  /* About Section */
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Skills Section */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .skill-card {
+    width: 200px;
+    height: 200px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .skill-icon {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Projects Section */
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .project-card {
+    width:100%;
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .project-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .project a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .github-btn {
+    display: inline-block;
+    background-color: #6c63ff; /* Purple GitHub-like button */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.github-btn:hover {
+    background-color: #4a45d1; /* Darker shade on hover */
+}
+
+  
+  /* Contact Form Section */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  form label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  .contact-btn {
+    padding: 12px 20px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-btn:hover {
+    background-color: var(--hover-color);
+  }
+  
+  /* Dark Mode and Light Mode */
+  :root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --accent-color: #6c63ff;
+    --hover-color: #5752d1;
+  }
+  
+  body.dark-mode {
+    --bg-color: #2c2c2c;
+    --text-color: #fff;
+    --accent-color: #ff6347;
+    --hover-color: #d94e34;
+  }
+  
+  
 
   body {
   font-family: 'Arial', sans-serif;
